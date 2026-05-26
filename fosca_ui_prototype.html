@@ -1,0 +1,197 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+:root{--cr:#F2EBE0;--cr-dk:#E8DED0;--tc:#8B2E08;--tc-lt:#C1440E;--tc-bg:#F5E8E2;--ms:#D4A017;--ms-bg:#FAF0D4;--mg:#4A6741;--mg-bg:#E2EDE0;--vl:#6B5B95;--vl-lt:#DDD6ED;--mn:#3D1C0A;--mn-m:#6B3A1F;--mn-l:#9B6040;--paper:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(107,58,31,0.06) 27px,rgba(107,58,31,0.06) 28px);}
+*{box-sizing:border-box;margin:0;padding:0;}
+.expo-wrap{background:#1A0E08;padding:1.5rem 1rem 2.5rem;display:flex;flex-direction:column;align-items:center;min-height:600px;}
+.expo-hdr{text-align:center;margin-bottom:1rem;color:var(--cr);}
+.expo-hdr h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;letter-spacing:-1px;margin-bottom:2px;}
+.expo-hdr h2 span{color:#C1440E;font-style:italic;}
+.expo-hdr p{font-size:11px;opacity:0.45;font-family:'DM Sans',sans-serif;}
+.snav{display:flex;gap:5px;margin-bottom:1rem;background:rgba(255,255,255,0.06);border-radius:50px;padding:4px;}
+.sb{padding:6px 16px;border-radius:40px;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:rgba(242,235,224,0.5);transition:all .2s;}
+.sb.on{background:var(--cr);color:var(--mn);}
+.phone{width:360px;border-radius:40px;overflow:hidden;box-shadow:0 0 0 9px #120A06,0 0 0 11px #1e1008,0 32px 60px rgba(0,0,0,0.65);}
+.sc{display:none;animation:fi .2s ease;}
+.sc.on{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.stb{display:flex;justify-content:space-between;padding:14px 20px 0;font-size:11px;font-weight:500;color:var(--mn);font-family:'DM Sans',sans-serif;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+@keyframes cU{from{stroke-dashoffset:415;}to{stroke-dashoffset:104;}}
+</style>
+
+<div class="expo-wrap" role="region" aria-label="Fosca — prototipo de interfaz de usuario">
+  <h2 class="sr-only">Fosca: prototipo UI de tres pantallas — Dashboard, Sesión activa y Progreso con IA</h2>
+
+  <div class="expo-hdr">
+    <h2>Fosc<span>a</span></h2>
+    <p>App de productividad y estudio · TP Interfaz de Usuario · Versión maximalista</p>
+  </div>
+
+  <div class="snav">
+    <button class="sb on" onclick="showS(1)">Dashboard</button>
+    <button class="sb" onclick="showS(2)">Sesión activa</button>
+    <button class="sb" onclick="showS(3)">Progreso + IA</button>
+  </div>
+
+  <div class="phone">
+
+    <!-- PANTALLA 1: DASHBOARD -->
+    <div id="sc1" class="sc on" style="background:var(--cr);min-height:780px;position:relative;overflow:hidden;">
+      <div style="position:absolute;font-family:'Playfair Display',serif;font-size:110px;font-weight:900;color:rgba(139,46,8,0.05);line-height:1;white-space:nowrap;pointer-events:none;z-index:0;top:200px;left:-8px;letter-spacing:-4px;">FOSCA</div>
+
+      <div style="position:relative;z-index:2;background:var(--tc);padding:14px 22px 60px;overflow:visible;">
+        <div style="position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(242,235,224,0.06);pointer-events:none;"></div>
+        <div class="stb" style="color:rgba(242,235,224,0.65);"><span>9:41</span><span>●●● 🔋</span></div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:2px;color:rgba(242,235,224,0.5);text-transform:uppercase;margin-bottom:6px;font-family:'DM Sans',sans-serif;">Buenos días, Valentina</div>
+        <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:var(--cr);line-height:1;letter-spacing:-2px;">Tu foco<br>está en<br><em style="color:var(--ms);">Derecho Civil</em></div>
+        <div style="font-size:11px;color:rgba(242,235,224,0.55);margin-top:7px;font-family:'DM Sans',sans-serif;">lunes 25 de mayo · semana 12</div>
+        <div style="position:absolute;right:18px;bottom:-46px;z-index:20;width:98px;height:98px;background:var(--cr);border-radius:50%;box-shadow:0 6px 22px rgba(61,28,10,0.16);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <svg width="98" height="98" viewBox="0 0 98 98" style="position:absolute;top:0;left:0;"><circle cx="49" cy="49" r="38" fill="none" stroke="rgba(61,28,10,0.08)" stroke-width="8"/><circle cx="49" cy="49" r="38" fill="none" stroke="#8B2E08" stroke-width="8" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="77" transform="rotate(-90 49 49)"/></svg>
+          <div style="position:relative;z-index:2;text-align:center;"><span style="font-family:'DM Mono',monospace;font-size:19px;font-weight:500;color:var(--tc);display:block;line-height:1;">68%</span><span style="font-size:7px;font-weight:600;letter-spacing:0.8px;color:var(--mn-l);text-transform:uppercase;display:block;margin-top:2px;line-height:1.3;font-family:'DM Sans',sans-serif;">META<br>SEMANAL</span></div>
+        </div>
+      </div>
+      <div style="height:52px;background:var(--cr);position:relative;z-index:1;"></div>
+
+      <div style="background:var(--vl-lt);border-left:4px solid var(--vl);padding:10px 14px;display:flex;align-items:center;gap:8px;position:relative;z-index:5;">
+        <div style="width:7px;height:7px;border-radius:50%;background:var(--vl);animation:pulse 2s infinite;flex-shrink:0;"></div>
+        <div style="font-size:12px;color:var(--mn);line-height:1.4;font-family:'DM Sans',sans-serif;"><strong style="color:var(--vl);">IA ✦</strong> Llevas 3 días sin repasar <strong style="color:var(--mn);">Procesal</strong> — ¿arrancamos hoy?</div>
+      </div>
+
+      <div style="padding:14px 0 0;position:relative;z-index:2;">
+        <div style="padding:0 18px;margin-bottom:8px;"><span style="font-size:10px;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--mn-l);letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:2px;">Mis materias</span><span style="font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:var(--mn);letter-spacing:-0.5px;">Cursando</span></div>
+
+        <div style="margin:0 18px 8px;background:var(--tc-bg);border-radius:16px;padding:16px;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(139,46,8,0.08);">
+          <div style="position:absolute;right:-6px;bottom:-16px;font-family:'Playfair Display',serif;font-size:90px;font-weight:900;color:rgba(139,46,8,0.06);line-height:1;pointer-events:none;">72</div>
+          <div style="position:absolute;top:16px;right:16px;background:var(--tc);color:var(--cr);font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;letter-spacing:0.5px;font-family:'DM Sans',sans-serif;">HOY</div>
+          <div style="width:100%;height:3px;background:var(--tc);border-radius:3px;margin-bottom:10px;"></div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--mn);margin-bottom:2px;">Derecho Civil</div>
+          <div style="font-family:'DM Mono',monospace;font-size:34px;font-weight:500;color:var(--tc);line-height:1;margin-bottom:8px;">72%</div>
+          <div style="height:4px;background:rgba(61,28,10,0.1);border-radius:3px;overflow:hidden;"><div style="height:100%;width:72%;background:var(--tc);border-radius:3px;"></div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;padding:0 18px;">
+          <div style="border-radius:13px;padding:10px 9px;background:var(--mg-bg);position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--mg);border-radius:13px 13px 0 0;"></div><div style="font-size:10px;font-weight:600;color:var(--mn);margin:5px 0 3px;line-height:1.2;font-family:'DM Sans',sans-serif;">Procesal</div><div style="font-family:'DM Mono',monospace;font-size:17px;font-weight:500;color:var(--mg);margin-bottom:5px;">38%</div><div style="height:3px;background:rgba(61,28,10,0.1);border-radius:2px;overflow:hidden;"><div style="height:100%;width:38%;background:var(--mg);border-radius:2px;"></div></div></div>
+          <div style="border-radius:13px;padding:10px 9px;background:var(--ms-bg);position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--ms);border-radius:13px 13px 0 0;"></div><div style="font-size:10px;font-weight:600;color:var(--mn);margin:5px 0 3px;line-height:1.2;font-family:'DM Sans',sans-serif;">Penal</div><div style="font-family:'DM Mono',monospace;font-size:17px;font-weight:500;color:var(--ms);margin-bottom:5px;">55%</div><div style="height:3px;background:rgba(61,28,10,0.1);border-radius:2px;overflow:hidden;"><div style="height:100%;width:55%;background:var(--ms);border-radius:2px;"></div></div></div>
+          <div style="border-radius:13px;padding:10px 9px;background:var(--vl-lt);position:relative;overflow:hidden;"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--vl);border-radius:13px 13px 0 0;"></div><div style="font-size:10px;font-weight:600;color:var(--mn);margin:5px 0 3px;line-height:1.2;font-family:'DM Sans',sans-serif;">Const.</div><div style="font-family:'DM Mono',monospace;font-size:17px;font-weight:500;color:var(--vl);margin-bottom:5px;">81%</div><div style="height:3px;background:rgba(61,28,10,0.1);border-radius:2px;overflow:hidden;"><div style="height:100%;width:81%;background:var(--vl);border-radius:2px;"></div></div></div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;background:var(--mn);padding:12px 22px 20px;display:flex;justify-content:space-around;align-items:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;"><div style="font-size:17px;">⌂</div><div style="font-size:9px;font-weight:600;letter-spacing:0.5px;color:var(--ms);text-transform:uppercase;font-family:'DM Sans',sans-serif;">Inicio</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;" onclick="showS(2)"><div style="font-size:17px;">◎</div><div style="font-size:9px;font-weight:600;letter-spacing:0.5px;color:rgba(242,235,224,0.3);text-transform:uppercase;font-family:'DM Sans',sans-serif;">Estudiar</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;"><div style="font-size:17px;">✦</div><div style="font-size:9px;font-weight:600;letter-spacing:0.5px;color:rgba(242,235,224,0.3);text-transform:uppercase;font-family:'DM Sans',sans-serif;">IA</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;" onclick="showS(3)"><div style="font-size:17px;">◈</div><div style="font-size:9px;font-weight:600;letter-spacing:0.5px;color:rgba(242,235,224,0.3);text-transform:uppercase;font-family:'DM Sans',sans-serif;">Progreso</div></div>
+      </div>
+    </div>
+
+    <!-- PANTALLA 2: SESIÓN ACTIVA -->
+    <div id="sc2" class="sc" style="background:var(--cr-dk);min-height:780px;overflow:hidden;position:relative;">
+      <div class="stb"><span>9:41</span><span>●●● 🔋</span></div>
+      <div style="padding:8px 18px 12px;position:relative;border-bottom:1px solid rgba(61,28,10,0.08);">
+        <div style="font-size:19px;color:var(--mn);cursor:pointer;margin-bottom:5px;display:inline-block;font-family:'DM Sans',sans-serif;" onclick="showS(1)">←</div>
+        <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--mn);line-height:1;letter-spacing:-1px;">Derecho Civil</div>
+        <div style="font-size:11px;color:var(--mn-l);margin-top:3px;font-family:'DM Sans',sans-serif;">Unidad 4 · Contratos</div>
+        <div style="position:absolute;right:18px;top:22px;display:flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--mg);background:var(--mg-bg);padding:4px 9px;border-radius:20px;font-family:'DM Sans',sans-serif;"><div style="width:6px;height:6px;border-radius:50%;background:var(--mg);animation:pulse 2s infinite;"></div>activo</div>
+      </div>
+
+      <div style="display:flex;justify-content:center;align-items:center;padding:16px 0 12px;position:relative;">
+        <div style="position:absolute;font-family:'Playfair Display',serif;font-size:160px;font-weight:900;color:rgba(61,28,10,0.04);line-height:1;top:-8px;z-index:0;pointer-events:none;">23</div>
+        <div style="position:absolute;left:22px;top:50%;transform:translateY(-50%);z-index:2;">
+          <div style="margin-bottom:8px;"><div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:500;color:var(--mn);">3</div><div style="font-size:9px;font-weight:600;color:var(--mn-l);letter-spacing:0.5px;text-transform:uppercase;font-family:'DM Sans',sans-serif;">sesiones<br>hoy</div></div>
+          <div><div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:500;color:var(--mn);">1.2h</div><div style="font-size:9px;font-weight:600;color:var(--mn-l);letter-spacing:0.5px;text-transform:uppercase;font-family:'DM Sans',sans-serif;">total<br>hoy</div></div>
+        </div>
+        <div style="position:relative;width:148px;height:148px;z-index:1;">
+          <svg style="transform:rotate(-90deg);position:absolute;top:0;left:0;" width="148" height="148" viewBox="0 0 148 148"><circle cx="74" cy="74" r="60" fill="none" stroke="rgba(61,28,10,0.08)" stroke-width="12"/><circle cx="74" cy="74" r="60" fill="none" stroke="var(--tc)" stroke-width="12" stroke-linecap="round" stroke-dasharray="377" stroke-dashoffset="94" style="animation:cU 1.5s ease forwards;"/></svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;"><div style="font-family:'DM Mono',monospace;font-size:30px;font-weight:500;color:var(--mn);line-height:1;">23:47</div><div style="font-size:10px;color:var(--mn-l);margin-top:3px;font-family:'DM Sans',sans-serif;">en sesión</div></div>
+        </div>
+      </div>
+
+      <div style="margin:0 18px;background:var(--cr);border-radius:13px;padding:16px;box-shadow:0 4px 20px rgba(61,28,10,0.08),inset 0 2px 4px rgba(61,28,10,0.03);background-image:var(--paper);position:relative;overflow:hidden;">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--tc);border-radius:0;"></div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--mn-l);text-transform:uppercase;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(61,28,10,0.1);font-family:'DM Sans',sans-serif;">Contratos · Concepto y clasificación</div>
+        <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--mn);margin-bottom:8px;line-height:1.2;">El contrato como fuente de obligaciones</div>
+        <div style="font-size:12px;color:var(--mn-m);line-height:1.75;font-family:'DM Sans',sans-serif;">El contrato es el acuerdo de voluntades entre dos o más partes que crea, modifica o extingue una relación jurídica patrimonial.<br><br><strong style="color:var(--mn);">Clasificación:</strong><br>— Unilaterales y bilaterales<br>— Onerosos y gratuitos<br>— Conmutativos y aleatorios</div>
+      </div>
+
+      <div style="margin:10px 18px 0;background:var(--vl-lt);border:1.5px dashed rgba(107,91,149,0.45);border-radius:13px;padding:11px 13px;display:flex;gap:8px;align-items:flex-start;">
+        <div style="width:7px;height:7px;border-radius:50%;background:var(--vl);animation:pulse 2s infinite;flex-shrink:0;margin-top:3px;"></div>
+        <div style="flex:1;">
+          <div style="font-size:12px;color:var(--mn);line-height:1.4;font-family:'DM Sans',sans-serif;"><strong style="color:var(--vl);">✦ IA</strong> Llevas 25 min — ¿seguís ahí? Tu retención baja después de los 30.</div>
+          <div style="display:flex;gap:7px;margin-top:8px;">
+            <button style="padding:6px 14px;border-radius:8px;background:var(--vl);color:var(--cr);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;border:none;cursor:pointer;">Tomar pausa</button>
+            <button style="padding:6px 14px;border-radius:8px;background:transparent;border:1px solid rgba(107,91,149,0.3);color:var(--mn-m);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;">Seguir</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin:10px 18px 0;background:var(--mn);border-radius:14px;padding:11px 13px;display:flex;gap:8px;align-items:center;">
+        <button style="padding:9px 12px;border-radius:9px;border:1px solid rgba(242,235,224,0.14);background:transparent;font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(242,235,224,0.55);cursor:pointer;">✎ Nota</button>
+        <button style="flex:1;background:var(--tc-lt);color:var(--cr);border:none;border-radius:9px;padding:11px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;">⏸  Pausa</button>
+        <button style="padding:9px 12px;border-radius:9px;border:1px solid rgba(242,235,224,0.14);background:transparent;font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(242,235,224,0.55);cursor:pointer;">■ Fin</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 3: PROGRESO + IA -->
+    <div id="sc3" class="sc" style="background:var(--cr);min-height:780px;overflow:hidden;position:relative;">
+      <div class="stb"><span>9:41</span><span>●●● 🔋</span></div>
+      <div style="padding:8px 18px 0;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:2px;color:var(--mn-l);text-transform:uppercase;margin-bottom:6px;font-family:'DM Sans',sans-serif;">Resumen semanal</div>
+        <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--mn);line-height:1;letter-spacing:-2px;margin-bottom:2px;">Tu semana <em style="color:var(--tc);">en Fosca.</em></div>
+      </div>
+
+      <div style="background:var(--tc);padding:13px 18px;margin-top:10px;position:relative;overflow:hidden;">
+        <div style="position:absolute;right:6px;top:-10px;font-size:72px;opacity:0.07;color:var(--cr);pointer-events:none;">✦</div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:2px;color:rgba(242,235,224,0.5);text-transform:uppercase;margin-bottom:4px;font-family:'DM Sans',sans-serif;">✦ IA · observación</div>
+        <div style="font-size:12px;color:var(--cr);line-height:1.55;font-family:'DM Sans',sans-serif;">Estudiaste <strong>4h más</strong> que la semana pasada. Tus mejores horas son entre las <strong>20 y las 22</strong>.</div>
+      </div>
+
+      <div style="padding:12px 18px 0;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--mn-l);text-transform:uppercase;margin-bottom:8px;font-family:'DM Sans',sans-serif;">Horas por materia</div>
+        <div style="display:flex;gap:7px;align-items:flex-end;height:110px;">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--mn);margin-bottom:3px;">8.5h</div><div style="width:100%;background:var(--cr-dk);border-radius:6px 6px 0 0;height:82px;display:flex;align-items:flex-end;overflow:hidden;"><div style="width:100%;height:85%;border-radius:6px 6px 0 0;background:#8B2E08;"></div></div><div style="font-size:9px;font-weight:600;color:var(--mn-l);text-align:center;letter-spacing:0.3px;margin-top:4px;line-height:1.3;font-family:'DM Sans',sans-serif;">D.Civil</div></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--mn);margin-bottom:3px;">4h</div><div style="width:100%;background:var(--cr-dk);border-radius:6px 6px 0 0;height:82px;display:flex;align-items:flex-end;overflow:hidden;"><div style="width:100%;height:44%;border-radius:6px 6px 0 0;background:#4A6741;"></div></div><div style="font-size:9px;font-weight:600;color:var(--mn-l);text-align:center;letter-spacing:0.3px;margin-top:4px;line-height:1.3;font-family:'DM Sans',sans-serif;">Procesal</div></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--mn);margin-bottom:3px;">5.5h</div><div style="width:100%;background:var(--cr-dk);border-radius:6px 6px 0 0;height:82px;display:flex;align-items:flex-end;overflow:hidden;"><div style="width:100%;height:61%;border-radius:6px 6px 0 0;background:#D4A017;"></div></div><div style="font-size:9px;font-weight:600;color:var(--mn-l);text-align:center;letter-spacing:0.3px;margin-top:4px;line-height:1.3;font-family:'DM Sans',sans-serif;">Penal</div></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;"><div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--mn);margin-bottom:3px;">9h</div><div style="width:100%;background:var(--cr-dk);border-radius:6px 6px 0 0;height:82px;display:flex;align-items:flex-end;overflow:hidden;"><div style="width:100%;height:100%;border-radius:6px 6px 0 0;background:#6B5B95;"></div></div><div style="font-size:9px;font-weight:600;color:var(--mn-l);text-align:center;letter-spacing:0.3px;margin-top:4px;line-height:1.3;font-family:'DM Sans',sans-serif;">Constit.</div></div>
+        </div>
+      </div>
+
+      <div style="padding:12px 18px 0;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--mn-l);text-transform:uppercase;margin-bottom:8px;font-family:'DM Sans',sans-serif;">Actividad semanal</div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(139,46,8,0.22);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">L<br>3h</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:34px;height:34px;border-radius:50%;background:rgba(139,46,8,0.46);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">M<br>5.5h</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:18px;height:18px;border-radius:50%;background:rgba(139,46,8,0.17);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">X<br>2h</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;background:rgba(139,46,8,0.73);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">J<br>7h</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:30px;height:30px;border-radius:50%;background:rgba(139,46,8,0.40);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">V<br>4.5h</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:38px;height:38px;border-radius:50%;background:rgba(139,46,8,0.60);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">S<br>6h</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:15px;height:15px;border-radius:50%;background:rgba(139,46,8,0.12);"></div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--mn-l);text-align:center;line-height:1.4;">D<br>1.5h</div></div>
+        </div>
+      </div>
+
+      <div style="padding:12px 18px 0;">
+        <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--mn-l);text-transform:uppercase;margin-bottom:8px;font-family:'DM Sans',sans-serif;">Recomendaciones</div>
+        <div style="background:var(--mg-bg);border-radius:13px;padding:11px 12px 11px 15px;margin-bottom:7px;display:flex;gap:10px;align-items:flex-start;position:relative;overflow:hidden;box-shadow:2px 3px 12px rgba(61,28,10,0.06);"><div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--mg);border-radius:0;"></div><div style="font-size:18px;flex-shrink:0;">◎</div><div><div style="font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:var(--mn);margin-bottom:2px;">Procesal necesita atención</div><div style="font-size:11px;color:var(--mn-m);line-height:1.5;font-family:'DM Sans',sans-serif;">Noté que no abrís Procesal desde el miércoles. Con 3 sesiones cortas alcanzás el 60%.</div></div></div>
+        <div style="background:var(--ms-bg);border-radius:13px;padding:11px 12px 11px 15px;display:flex;gap:10px;align-items:flex-start;position:relative;overflow:hidden;box-shadow:2px 3px 12px rgba(61,28,10,0.06);"><div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ms);border-radius:0;"></div><div style="font-size:18px;flex-shrink:0;">◈</div><div><div style="font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:var(--mn);margin-bottom:2px;">Tu mejor horario: 20–22hs</div><div style="font-size:11px;color:var(--mn-m);line-height:1.5;font-family:'DM Sans',sans-serif;">Tu retención es 40% mayor en sesiones nocturnas. Agenda Penal ahí.</div></div></div>
+      </div>
+
+      <div style="margin:12px 18px 20px;background:var(--mn);border-radius:16px;padding:18px;position:relative;overflow:hidden;">
+        <div style="position:absolute;right:-6px;bottom:-24px;font-family:'Playfair Display',serif;font-size:100px;font-weight:900;color:rgba(242,235,224,0.04);line-height:1;pointer-events:none;">70</div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:2px;color:rgba(242,235,224,0.4);text-transform:uppercase;margin-bottom:5px;font-family:'DM Sans',sans-serif;">✦ Objetivo sugerido por IA</div>
+        <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--cr);line-height:1.15;margin-bottom:10px;letter-spacing:-0.5px;">Llegar al <em style="color:var(--ms);">70%</em> en Procesal</div>
+        <div style="background:rgba(242,235,224,0.1);border-radius:4px;height:5px;margin-bottom:5px;overflow:hidden;"><div style="width:38%;height:100%;background:var(--ms);border-radius:4px;"></div></div>
+        <div style="font-family:'DM Mono',monospace;font-size:11px;color:rgba(242,235,224,0.4);">38% actual → 70% meta · ~3 sesiones</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showS(n){
+  document.querySelectorAll('.sc').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.sb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('sc'+n).classList.add('on');
+  document.querySelectorAll('.sb')[n-1].classList.add('on');
+}
+</script>
